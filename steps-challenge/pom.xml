@@ -15,6 +15,7 @@
     <module>public-api</module>
     <module>user-webapp</module>
     <module>ingestion-service</module>
+    <module>congrats-service</module>
   </modules>
 
   <properties>
