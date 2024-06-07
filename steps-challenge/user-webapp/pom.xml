@@ -55,7 +55,7 @@
               <goal>npm</goal>
             </goals>
             <configuration>
-              <arguments>run build</arguments>
+              <arguments>install</arguments>
             </configuration>
           </execution>
           <execution>
@@ -63,6 +63,7 @@
             <goals>
               <goal>npm</goal>
             </goals>
+            <phase>generate-resources</phase>
             <configuration>
               <arguments>run build</arguments>
             </configuration>
