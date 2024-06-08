@@ -16,6 +16,8 @@
     <module>user-webapp</module>
     <module>ingestion-service</module>
     <module>congrats-service</module>
+    <module>user-profile-service</module>
+    <module>activity-service</module>
   </modules>
 
   <properties>
