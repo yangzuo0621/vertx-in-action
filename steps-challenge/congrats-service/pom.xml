@@ -13,7 +13,7 @@
   <artifactId>congrats-service</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>ingestion-service</name>
+  <name>congrats-service</name>
 
   <properties>
     <mainClass>com.example.congrats.CongratsVerticle</mainClass>

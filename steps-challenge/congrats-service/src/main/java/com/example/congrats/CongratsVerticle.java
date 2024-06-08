@@ -33,15 +33,20 @@ public class CongratsVerticle extends AbstractVerticle {
         mailClient = MailClient.createShared(vertx, MailerConfig.config());
         webClient = WebClient.create(vertx);
 
-        KafkaConsumer.<String, JsonObject>create(vertx, KafkaConfig.consumerConfig("congrats-service"))
-                .subscribe("daily.step.updates")
-                .<KafkaConsumerRecord<String, JsonObject>>toFlowable()
+        KafkaConsumer<String, JsonObject> consumer = KafkaConsumer.create(vertx,
+                KafkaConfig.consumerConfig("congrats-service"));
+        consumer
+                .handler(record -> {
+                })
+                .toFlowable()
                 .filter(this::above10k)
                 .distinct(KafkaConsumerRecord::key)
                 .flatMapSingle(this::sendmail)
                 .doOnError(err -> logger.error("send email failed", err))
                 .retryWhen(this::retryLater)
-                .subscribe(mailResult -> logger.info("Congratulated {}", mailResult.getRecipients()));
+                .subscribe(mailResult -> logger.info("Congratulated {}",
+                        mailResult.getRecipients()));
+        consumer.subscribe("daily.step.updates");
 
         return Completable.complete();
     }
