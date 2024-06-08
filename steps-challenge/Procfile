@@ -1,0 +1,15 @@
+activity-service: java -jar activity-service/target/activity-service-1.0-SNAPSHOT-all.jar
+
+congrats-service: java -jar congrats-service/target/congrats-service-1.0-SNAPSHOT-all.jar
+
+event-stats-service: java -jar event-stats-service/target/event-stats-service-1.0-SNAPSHOT-all.jar 
+
+ingestion-service: java -jar ingestion-service/target/ingestion-service-1.0-SNAPSHOT-all.jar
+
+public-api: cd public-api && java -jar target/public-api-1.0-SNAPSHOT-all.jar
+
+user-profile-service: java -jar user-profile-service/target/user-profile-service-1.0-SNAPSHOT-all.jar
+
+user-webapp: java -jar user-webapp/target/user-webapp-1.0-SNAPSHOT-all.jar
+
+dashboard-webapp: java -jar dashboard-webapp/target/dashboard-webapp-1.0-SNAPSHOT-all.jar
