@@ -18,6 +18,7 @@
     <module>congrats-service</module>
     <module>user-profile-service</module>
     <module>activity-service</module>
+    <module>event-stats-service</module>
   </modules>
 
   <properties>
